@@ -1,0 +1,35 @@
+h1 {
+    color: yellow;
+    font-family:serif;
+    font-size: 50px;
+    line-height: 600px;
+    text-align: center;
+
+    }
+body {
+    background-color: lightsteelblue;
+    //基本
+    margin: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    //
+}
+.button_wrap{
+    text-align: center;
+}
+
+.Click{
+    height: 100%;
+}
+.big-text{
+    font-size: 30px;
+}
+.blue-text {
+    color: steelblue;
+    background-color: rgba(0,0,0,0);
+    border: none;
+}
+.Click:hover{
+    color:red;
+}
