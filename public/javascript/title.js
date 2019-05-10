@@ -22,7 +22,7 @@ function postForm(value) {
     var request = document.createElement('input');
 
     form.method = 'POST';
-    form.action = 'http://localhost:3000/admins';
+    form.action = '/admins';
 
     request.type = 'hidden'; //入力フォームが表示されないように
     request.name = 'text';
