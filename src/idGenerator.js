@@ -9,6 +9,5 @@ module.exports = () => {
     for (let i = 0; i < len; i++) {
         roomId += characters.charAt(Math.floor(Math.random() * characters.length));
     }
-    console.log(`ルームID: ${roomId}`); // 確認用
     return roomId;
 };
