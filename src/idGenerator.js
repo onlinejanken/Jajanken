@@ -12,5 +12,3 @@ module.exports = () => {
     console.log(`ルームID: ${roomId}`); // 確認用
     return roomId;
 };
-
-// console.log(module.exports());  // テスト
