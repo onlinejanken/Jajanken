@@ -1,7 +1,9 @@
 const btn2 = document.getElementById('btn2')
+const btn3 = document.getElementById('btn3')
+const btn4 = document.getElementById('btn4')
 
 btn2.addEventListener('click', (value, nextScreen) => {
-  // „‚³‚ê‚½‚Ìˆ—
+  // æ¨ã•ã‚ŒãŸæ™‚ã®å‡¦ç†
   let form = document.createElement('form');
   let request = document.createElement('block');
 
