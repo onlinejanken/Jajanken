@@ -10,8 +10,8 @@ router.post('/admins',(req, res) => {
 router.post('/participants', (req, res) => {
     res.render('participants');
 });
-router.post('/participants/wait/:roomID', (req, res) => {
-    res.send(req.params);
+router.post('/participants/wait/:roomId', (req, res) => {
+    res.send(req.params.roomId);
 });
 
 module.exports = router;
