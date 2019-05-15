@@ -4,7 +4,6 @@ h1 {
     font-size: 50px;
     line-height: 600px;
     text-align: center;
-
     }
 body {
     background-color: lightsteelblue;
@@ -32,4 +31,24 @@ body {
 }
 .Click:hover{
     color:red;
+}
+#layer {
+    display :none;
+    position: absolute;
+    left: 25%;
+    top: 25%;
+    width: 50%;
+    height: 50%;
+    background-color: black;
+    opacity: 0.0;
+}
+
+#makeroom {
+    padding: 10px 30px;
+    opacity: 1.0;
+}
+
+#joinroom {
+    padding: 10px 30px;
+    opacity: 1.0;
 }
