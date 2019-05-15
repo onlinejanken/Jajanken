@@ -14,4 +14,5 @@ router.post('/participants/wait/:roomId', (req, res) => {
     res.send(req.params.roomId);
 });
 
+
 module.exports = router;
