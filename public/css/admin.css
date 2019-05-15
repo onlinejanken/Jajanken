@@ -1,0 +1,43 @@
+h1 {
+text-align: center;
+}
+
+
+#menu ul{ 
+margin: auto; 
+padding: auto; 
+list-style-type: none; 
+}
+#menu li{ 
+display: inline; 
+padding: auto; 
+margin: auto; 
+}
+#menu li a{
+display: block; 
+border-left: 20px solid #474655;
+border-top: 1px solid #474655;
+border-right: 1px solid #474655;
+border-bottom: 1px solid #474655;
+background-color: #fff;
+padding: 3px 10px;
+text-decoration: none;
+color: #333;
+width: 300px; 
+margin: 5px auto;
+text-align: center;
+font-size: 50px;
+}
+#menu li a:hover{
+border-left: 8px solid #474655; //îÚÇ—èoÇµÇƒÇÈä¥Ç∂
+border-top: 1px solid #474655;
+border-right: 1px solid #474655;
+border-bottom: 1px solid #474655;
+background-color: #d7efd7;
+}
+
+#menu li a:active {
+transform: translateY(3px);
+background-color: #ffcc00;
+
+]
