@@ -2,7 +2,7 @@ const express = require('express');
 const app = express();
 const controller = require('./controller/controller.js');
 const bodyParser = require('body-parser');
-const socket = require.apply('socket.io');
+const socket = require('socket.io');
 
 app.set('views', __dirname + '/view');
 app.set('view engine', 'ejs');
