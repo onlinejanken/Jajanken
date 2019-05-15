@@ -1,28 +1,28 @@
+const Layer = document.getElementById('layer');
 
-//window.onload = function(){
-    var b1 = document.getElementById("b1");
-    var b2 = document.getElementById("b2");
-    b1.style.visibility = "hidden";
-    b2.style.visibility = "hidden";
-//};
+document.body.addEventListener('click',Click);
 
+//bodyクリック時の動作関数
 function Click(){
-
-    b1.style.visibility = "visible";
-    b2.style.visibility = "visible";
-    username = window.prompt("ユーザめいをにゅうりょくしてください");
-    console.log(username);
-    postForm(username);
-    console.log(postform(username));
+    const username = window.prompt("ユーザめいをにゅうりょくしてください");
+    if(username === null) return;
+    if(username === "") return;
+    document.body.removeEventListener('click',Click);
+    popup();
+}
+//ポップアップさせ、ボタンを押させる関数
+function popup(){
+    Layer.style.display = "block";
 }
 
-function postForm(value) {
+//ページ遷移関数
+function postForm(value, nextScreen) {
 
-    var form = document.createElement('form');
-    var request = document.createElement('input');
+    let form = document.createElement('form');
+    let request = document.createElement('block');
 
     form.method = 'POST';
-    form.action = '/admins';
+    form.action = '/'+ nextScreen;
 
     request.type = 'hidden'; //入力フォームが表示されないように
     request.name = 'text';
