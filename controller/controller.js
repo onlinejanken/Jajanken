@@ -11,7 +11,14 @@ router.post('/participants', (req, res) => {
     res.render('participants');
 });
 router.post('/participants/wait/:roomId', (req, res) => {
-    res.send(req.params.roomId);
+    res.render('participantsWaitRoom', { roomId: req.params.roomId });
+});
+router.post('/admins/wait', (req, res) => {
+     res.render('adminsWaitRoom', {
+        roomId: require('../src/idGenerator')(),
+        peopleNum: req.body.peopleNum
+     });
+
 });
 
 
