@@ -1,5 +1,7 @@
 const Layer = document.getElementById('layer');
+
 document.body.addEventListener('click',Click);
+
     var b1 = document.getElementById("b1");
     var b2 = document.getElementById("b2");
     b1.style.visibility = "hidden";
@@ -29,7 +31,7 @@ function postForm(value, nextScreen) {
     console.log(username);
     postForm(username);
     console.log(postform(username));
-
+  
     request.type = 'hidden'; //入力フォームが表示されないように
     request.name = 'text';
     request.value = value;
