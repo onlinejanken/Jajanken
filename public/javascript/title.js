@@ -1,12 +1,11 @@
+
+window.onload = function(){
+    var b1 = document.getElementById("b1").style.visibility = "hidden";
+    var b2 = document.getElementById("b2").style.visibility = "hidden";
+};
 const Layer = document.getElementById('layer');
 
 document.body.addEventListener('click',Click);
-
-    var b1 = document.getElementById("b1");
-    var b2 = document.getElementById("b2");
-    b1.style.visibility = "hidden";
-    b2.style.visibility = "hidden";
-
 //bodyクリック時の動作関数
 function Click(){
     const username = window.prompt("ユーザめいをにゅうりょくしてください");
