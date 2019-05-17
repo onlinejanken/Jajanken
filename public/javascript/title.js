@@ -1,7 +1,7 @@
 const Layer = document.getElementById('layer');
 
 document.body.addEventListener('click',Click);
-//window.onload = function(){
+
     var b1 = document.getElementById("b1");
     var b2 = document.getElementById("b2");
     b1.style.visibility = "hidden";
@@ -18,22 +18,20 @@ function Click(){
 //ポップアップさせ、ボタンを押させる関数
 function popup(){
     Layer.style.display = "block";
-    b1.style.visibility = "visible";
-    b2.style.visibility = "visible";
-    username = window.prompt("ユーザめいをにゅうりょくしてください");
+}
+
+//ページ遷移関数
+function postForm(value, nextScreen) {
+
+    let form = document.createElement('form');
+    let request = document.createElement('block');
+
+    form.method = 'POST';
+    form.action = '/'+ nextScreen;
     console.log(username);
     postForm(username);
     console.log(postform(username));
-}
-
-function postForm(value) {
-
-    var form = document.createElement('form');
-    var request = document.createElement('input');
-
-    form.method = 'POST';
-    form.action = '/admins';
-
+  
     request.type = 'hidden'; //入力フォームが表示されないように
     request.name = 'text';
     request.value = value;
