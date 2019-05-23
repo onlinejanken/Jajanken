@@ -1,9 +1,9 @@
 const Layer = document.getElementById('layer');
-document.body.addEventListener('click',Click);
-    var b1 = document.getElementById("b1");
-    var b2 = document.getElementById("b2");
+    let b1 = document.getElementById("makeroom");
+    let b2 = document.getElementById("joinroom");
     b1.style.visibility = "hidden";
     b2.style.visibility = "hidden";
+    document.body.addEventListener('click',Click);
 
 //bodyクリック時の動作関数
 function Click(){
@@ -16,6 +16,11 @@ function Click(){
 //ポップアップさせ、ボタンを押させる関数
 function popup(){
     Layer.style.display = "block";
+    b1.style.visibility = "visible";
+    b2.style.visibility = "visible";
+    console.log(Layer.style.display);
+    console.log(b1.style.visibility);
+    console.log(b2.style.visibility);
 }
 
 //ページ遷移関数

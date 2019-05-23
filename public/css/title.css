@@ -6,13 +6,13 @@ h1 {
     text-align: center;
     }
 body {
+    z-index: 1;
     background-color: lightsteelblue;
-    //基本
+    /*基本*/
     margin: 0;
     width: 100%;
     height: 100%;
     overflow: hidden;
-    //
 }
 .button_wrap{
     text-align: center;
@@ -33,6 +33,7 @@ body {
     color:red;
 }
 #layer {
+    z-index: 2;
     display :none;
     position: absolute;
     left: 25%;
@@ -40,15 +41,12 @@ body {
     width: 50%;
     height: 50%;
     background-color: black;
-    opacity: 0.0;
 }
 
 #makeroom {
     padding: 10px 30px;
-    opacity: 1.0;
 }
 
 #joinroom {
     padding: 10px 30px;
-    opacity: 1.0;
 }
