@@ -1,15 +1,10 @@
 const Layer = document.getElementById('layer');
 
-let b1 = document.getElementById("makeroom");
-let b2 = document.getElementById("joinroom");
-
 b1.style.visibility = "hidden";
 b2.style.visibility = "hidden";
 
 document.body.addEventListener('click',Click);
 
-
-document.body.addEventListener('click',Click);
 //bodyクリック時の動作関数
 function Click(){
     const username = window.prompt("ユーザめいをにゅうりょくしてください");
@@ -17,7 +12,6 @@ function Click(){
     if(username === "") return;
     
     document.body.removeEventListener('click',Click);
-    
     popup();
 }
 //ポップアップさせ、ボタンを押させる関数
@@ -30,6 +24,14 @@ function popup(){
     console.log(b1.style.visibility);
     console.log(b2.style.visibility);
 }
+//部屋を作るボタンを押したときの動作
+function makeClick(){
+    postForm(username, admins);
+}
+
+function joinClick(){
+    postForm(username, participants);
+}
 
 //ページ遷移関数
 function postForm(value, nextScreen) {
@@ -38,14 +40,11 @@ function postForm(value, nextScreen) {
     let request = document.createElement('block');
     
     form.method = 'POST';
-    form.action = '/'+ nextScreen;
-    console.log(username);
-    postForm(username);
-    console.log(postform(username));
+    form.action = '/'+ nextScreen;    
   
     request.type = 'hidden'; //入力フォームが表示されないように
     request.name = 'text';
-    request.value = value;
+    request.value = value; //valueを送信する。
 
     form.appendChild(request);
     document.body.appendChild(form);
