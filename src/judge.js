@@ -1,18 +1,34 @@
-module.exports = (people) => {
-    const number = people.length;
+const drawer = (playerList) => {
+    for (let player of playerList) {
+        player.judge = 0;
+    }
+};
 
-    if (number == 2) {
-        const judge = (people[0].hand - people[1].hand + 3) % 3;
-        if (judge == 0) {
-            people[0].judge = people[1].judge = 0;  // 引き分け
-        } else if (judge == 1) {
-            people[0].judge = -1;  // 負け
-            people[1].judge = 1;   // 勝ち
+const winnerAndLoser = (playerList, judgeValue) => {
+    const winHand = { 3: 0, 5: 2, 6: 1 }  // 判定と勝ち手を関連付けるオブジェクト
+
+    for (let player of playerList) {
+        if (player.hand == winHand[judgeValue]) {
+            player.judge = 1;
         } else {
-            people[0].judge = 1;  // 勝ち
-            people[1].judge = -1;   // 負け
+            player.judge = -1;
         }
     }
+};
 
-    return people;
+module.exports = (playerList) => {
+    let judgeValue = 0;
+    const draw = [1, 2, 4, 7];  // 引き分けの判定を格納する配列
+
+    for (const player of playerList) {
+        if (judgeValue == 7) { break; }
+        judgeValue |= 1 << player.hand;
+    }
+    if (draw.includes(judgeValue)) {
+        drawer(playerList);
+    } else {
+        winnerAndLoser(playerList, judgeValue);
+    }
+
+    return playerList;
 };
