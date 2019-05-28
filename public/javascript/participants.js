@@ -2,7 +2,7 @@ const ok = document.getElementById('ok');
 ok.addEventListener('click', returnClick);
 //okボタンを押すとtitleに戻る
 function returnClick(){
-    postForm(null, 'title');
+    getForm(null, '');
 }
 
 const send = document.getElementById('send');
@@ -12,7 +12,7 @@ send.addEventListener('click', sendForm);
 function sendForm(){
     let roomId = document.getElementById('roomId').value;
     console.log(roomId);
-    getForm(roomId, participatsWaitRoom);
+    postForm(roomId, 'participants');
 }
 
 //ページ遷移関数(post) 
@@ -22,7 +22,7 @@ function postForm(value, nextScreen) {
     let request = document.createElement('block');
     
     form.method = 'POST';
-    form.action = '/'+ nextScreen;
+    form.action = '/'+ nextScreen + '/wait' + '/' + value;
 
 
   
