@@ -1,13 +1,13 @@
 h1 {
     color: yellow;
-    font-family:serif;
+    font-family: 'Hiragino Maru Gothic Pro','ヒラギノ丸ゴ Pro W4', sans-serif;saka, "ＭＳ Ｐゴシック", "MS PGothic", sans-serif;
     font-size: 50px;
     line-height: 600px;
     text-align: center;
     }
 body {
     z-index: 1;
-    background-color: lightsteelblue;
+    background-color:#98EFE6 ;
     /*基本*/
     margin: 0;
     width: 100%;
@@ -44,7 +44,16 @@ body {
 }
 
 #makeroom {
-    padding: 10px 30px;
+    
+    width:200px;
+    font-size:24px;
+    font-weight:bold;
+    text-decoration:none;
+    display:block;
+    text-align:center;
+    padding:8px 0 10px;
+    color:#333;
+    border:1px solid #333;
 }
 
 #joinroom {
