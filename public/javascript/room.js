@@ -14,7 +14,7 @@ function countDown(){
     },1000);
 }
 
-function lock(){
+function rock(){
     player.hand = 0;
     console.log(player);
 }
