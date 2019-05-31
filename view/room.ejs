@@ -9,13 +9,16 @@
     </title>
 </head>
 <body id="body">
-   <h2>じゃんけん</h2><br>
-   <div class="timer">
+    <div id="username"><%- username%></div>
+    <div id="roomId"><%- roomId%></div>
+    <h2>じゃんけん</h2><br>
+    <div class="timer">
        <span id="tiemr">あと10秒</span>
-   </div>
-       <img id="lock" src="">
-       <img id="lock" src="">
-       <img id="lock" src="">
+    </div>
+    <img id="lock" src="public/image/image3.png" onclick="lock()">
+    <img id="paper" src="public/image/image2.png" onclick="paper()">
+    <img id="scissors" src="public/image/image1.png" onclick="scissors()">
+
 <script type="text/javascript" src="public/javascript/room.js"></script>
 </body>
 </html>
