@@ -7,7 +7,7 @@ h1 {
     }
 body {
     z-index: 1;
-    background-color:#98EFE6 ;
+    background-color:#2bc4ff ;
     /*基本*/
     margin: 0;
     width: 100%;
@@ -33,18 +33,30 @@ body {
     color:red;
 }
 #layer {
-    z-index: 2;
     display :none;
     position: absolute;
     left: 25%;
     top: 25%;
     width: 50%;
     height: 50%;
-    background-color: black;
+    background:
+    linear-gradient(
+      90deg,
+      rgba(208, 147, 82, 0.6),
+      rgba(192, 134, 70, 0.6) 60%,
+      rgba(208, 147, 82, 0.6)
+    ),
+    repeating-radial-gradient(
+      ellipse at 60% 500%,
+      #c08646,
+      #c08646 0.2%,
+      #d09352 0.6%,
+      #d09352 1%
+    );
+    border-radius: 10px;
 }
 
 #makeroom {
-    
     width:200px;
     font-size:24px;
     font-weight:bold;
@@ -54,8 +66,50 @@ body {
     padding:8px 0 10px;
     color:#333;
     border:1px solid #333;
+    float: left;
+    margin-top: 45%;
+    margin-left: 30px;
+}
+#makeroom:hover{
+    background-color: #59b1eb;
+}
+
+#makeroom:active{
+    -webkit-transform: translateY(4px);
+    transform: translateY(4px);
+    box-shadow: 0px 0px 1px rgba(0, 0, 0, 0.2);
+    border-bottom: none;
 }
 
 #joinroom {
-    padding: 10px 30px;
+    width:200px;
+    font-size:24px;
+    font-weight:bold;
+    text-decoration:none;
+    display:block;
+    text-align:center;
+    padding:8px 0 10px;
+    color:#333;
+    border:1px solid #333;
+    float: right;
+    margin-top: 45%;
+    margin-right: 30px; 
+}
+
+#joinroom:hover{
+    background-color: #59b1eb;
+}
+
+#joinroom:active{
+    -webkit-transform: translateY(4px);
+    transform: translateY(4px);
+    box-shadow: 0px 0px 1px rgba(0, 0, 0, 0.2);
+    border-bottom: none;
+}
+#textStart{
+    position: absolute;
+    transform: translateY(50%);
+    top: 20%;
+    margin-left: 9%;
+    color: #98EFE6;
 }
