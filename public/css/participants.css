@@ -5,11 +5,35 @@ body {
     height: 100%;
     overflow: hidden;
 }
-
 .text{
     text-align: center;
+    font-size : 45px;
+    margin-top : 10%;
+    font-family: Quicksand, 游ゴシック体, "Yu Gothic", YuGothic, "ヒラギノ角ゴシック Pro", "Hiragino Kaku Gothic Pro", メイリオ, Meiryo, Osaka, "ＭＳ Ｐゴシック", "MS PGothic", sans-serif;
+    color: yellow;
 }
-
 .wrap{
     text-align: center;
+}
+input{
+    font-size : 2em;
+}
+.button{
+    width:200px;
+    font-size :24px;
+    font-weight:bold;
+    text-decoration:none;
+    text-align:center;
+    padding:8px 0 10px;
+    color:#333;
+    border:1px solid #333;
+}
+.button:hover{
+    background-color: #59b1eb;
+}
+.button:active{
+    -webkit-transform: translateY(4px);
+    transform: translateY(4px);
+    box-shadow: 0px 0px 1px rgba(0, 0, 0, 0.2);
+    border-bottom: none;
 }
