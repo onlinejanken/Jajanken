@@ -3,6 +3,9 @@ const app = express();
 const bodyParser = require('body-parser');
 const socket = require('socket.io');
 
+const db = require('./db/room.js');
+db.init();
+
 app.set('views', __dirname + '/view');
 app.set('view engine', 'ejs');
 
