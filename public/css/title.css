@@ -6,7 +6,7 @@ h1 {
     text-align: center;
     }
 body {
-    z-index: 1;
+    zoom: 1.0;
     background-color:#2bc4ff ;
     /*基本*/
     margin: 0;
@@ -35,10 +35,12 @@ body {
 #layer {
     display :none;
     position: absolute;
-    left: 25%;
-    top: 25%;
-    width: 50%;
-    height: 50%;
+    left: 0px;
+    top: 150px;
+    right: 0px;
+    width: 500px;
+    height: 500px;
+    margin:auto;
     background:
     linear-gradient(
       90deg,
@@ -110,7 +112,7 @@ body {
 }
 .textStart{
     position: relative;
-    top: 20%;
-    left : 55px; 
+    top: 40px;
+    left: 50px;
     color: #98EFE6;
 }
