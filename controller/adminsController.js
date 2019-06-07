@@ -8,7 +8,7 @@ router.post('/', (req, res) => {
 router.post('/wait', (req, res) => {
     res.render('adminsWaitRoom', {
         roomId: require('../src/idGenerator')(),
-        peopleNum: req.body.peopleNum
+        playerNum: req.body.playerNum
     });
 
 });
