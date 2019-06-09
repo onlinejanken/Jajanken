@@ -1,6 +1,6 @@
 function waitJump(playerNum) {
     let form = document.createElement('form');
-    let request = document.createElement('block');
+    let request = document.createElement('input');
 
     form.method = 'POST';
     form.action = '/admins/wait';
