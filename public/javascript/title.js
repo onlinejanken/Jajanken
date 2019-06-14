@@ -34,19 +34,18 @@ function joinClick(){
     postForm(username, 'participants');
 }
 //ページ遷移関数
-function postForm(value, nextScreen) {
+function postForm(username, nextScreen) {
 
     let form = document.createElement('form');
-    let request = document.createElement('block');
+    let request = document.createElement('input');
 
     form.method = 'POST';
-    form.action = '/'+ nextScreen;
-    console.log(username);
+    form.action = '/' + nextScreen;
 
 
     request.type = 'hidden'; //入力フォームが表示されないように
-    request.name = 'text';
-    request.value = value;
+    request.name = 'username';
+    request.value = username;
 
     form.appendChild(request);
     document.body.appendChild(form);

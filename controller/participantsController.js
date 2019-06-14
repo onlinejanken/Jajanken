@@ -2,11 +2,15 @@ const express = require('express');
 const router = express.Router();
 
 router.post('/', (req, res) => {
-    res.render('participants');
+    req.session.username = req.body.username;
+
+    res.render('participants', { session: req.session });
 });
 
 router.post('/wait/:roomId', (req, res) => {
-    res.render('participantsWaitRoom', { roomId: req.params.roomId });
+    req.session.roomId = req.params.roomId;
+ 
+    res.render('participantsWaitRoom', { session: req.session });
 });
 
 
