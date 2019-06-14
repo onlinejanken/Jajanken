@@ -9,8 +9,11 @@
   "author": "",
   "license": "MIT",
   "dependencies": {
+    "cookie-parser": "^1.4.4",
     "ejs": "^2.6.1",
     "express": "^4.16.4",
-    "socket.io": "^2.2.0"
+    "express-session": "^1.16.2",
+    "socket.io": "^2.2.0",
+    "sqlite3": "^4.0.8"
   }
 }

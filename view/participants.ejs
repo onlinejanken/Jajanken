@@ -8,14 +8,16 @@
 </title>
 </head>
 <body>
-    <h1>
-    部屋番号を入力してください。<br>
-    <input type="text" id="roomId"><br>
-    <button type="button" id="send">送信</button><br>
-    入室をやめる。</br>
-    <button type="button" id="ok">OK</button>
-
-    </h1>
+    <h1><%- session.username %></h1>
+    <h1 class="text">部屋番号を入力してください。</h1>
+    <div class="wrap">
+        <input type="text" id="roomId">
+        
+        <h2></h2>
+        <button type="button" id="send" class="button" >送信</button><br>
+        <h1 class="text">入室をやめる。</h1>
+        <button type="button" id="ok" class="button">OK</button>
+    </div>
     <script type="text/javascript" src="public/javascript/participants.js"></script>
 </body>
 </html>

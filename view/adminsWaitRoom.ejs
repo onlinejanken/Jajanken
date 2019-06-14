@@ -1,25 +1,32 @@
 <!DOCTYPE html>
-<html lang = "ja">
-<link rel = "stylesheet" type = "text/css" href = "public/css/adminsWaitRoom.css">
-<script type="text/javascript" src="public/javascript/adminsWaitRoom.js"></script>
-<meta content="html,css,javascript"/>
+<html lang="ja">
+<link rel="stylesheet" type="text/css" href="/public/css/adminsWaitRoom.css">
+<script type="text/javascript" src="/public/javascript/adminsWaitRoom.js"></script>
+<meta content="html,css,javascript" />
+
 <head>
   <meta charset="UTF-8">
-<title>番号生成画面</title>
+  <title>番号生成画面</title>
 </head>
 
 <body>
-  <h1>あなたの部屋番号は</h1><br>
-  <script></script>
+  <h1><%- session.username %></h1>
+  <h1>あなたの部屋番号は</h1>
+  <h1><%- session.roomId %></h1>
   <h1>です。</h1>
 
-<h2>現在</h2>
-<script></script>
-<h2>人</h2><br>
+  <h2>現在</h2>
+  <h2>0 / <%- session.playerNum %></h2>
+  <h2>人</h2><br>
 
   <div id="exit">
-    <button type="button1" class="exit" value="exit">やっぱりやめる</button>
-    <button type="button2" class="next" value="next">このまま始める</button>
+  
+    <form method="GET" action="/">
+      <button type="submit" id="exit" value="exit">やっぱりやめる</button>
+    </form>
+    <button type="button2" id="next" value="next">このまま始める</button>
   </div>
+  
 </body>
+
 </html>
