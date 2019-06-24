@@ -19,7 +19,7 @@ const addRoom = (roomId, master, playerNum) => {
         const stmt = db.prepare(`insert into room (id, master, num, maxnum) values (?, ?, ?, ?)`);
         stmt.run(roomId, master, 1, playerNum);
     });
-}
+};
 
 const deleteRoom = (roomId) => {
     db.serialize(() => {
