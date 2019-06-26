@@ -14,11 +14,18 @@ body {
 }
 
 
-#timer {
+.timer {
     color: yellow;
     font-family:serif;
     font-size: 50px;
     line-height: 60px;
     text-align: center;
-
+}
+img{
+    display: inline-block;
+    width:20%;
+    height:80%;
+}
+.images{
+    text-align: center;
 }

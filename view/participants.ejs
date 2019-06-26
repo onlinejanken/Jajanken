@@ -8,11 +8,10 @@
 </title>
 </head>
 <body>
-    <h1><%- session.username %></h1>
+    <h1 class="username">ようこそ <font color="red"><%- session.username %></font> さん</h1>
     <h1 class="text">部屋番号を入力してください。</h1>
     <div class="wrap">
         <input type="text" id="roomId">
-        
         <h2></h2>
         <button type="button" id="send" class="button" >送信</button><br>
         <h1 class="text">入室をやめる。</h1>

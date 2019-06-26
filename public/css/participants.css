@@ -37,3 +37,8 @@ input{
     box-shadow: 0px 0px 1px rgba(0, 0, 0, 0.2);
     border-bottom: none;
 }
+.username{
+    position : relative;
+    margin-top: 20px;
+    margin-left: 90px;
+}
