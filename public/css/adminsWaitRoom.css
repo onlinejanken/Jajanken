@@ -1,3 +1,15 @@
+body {
+background-color: #2bc4ff;
+}
+
+h1 {
+text-align: center;
+}
+
+h2 {
+text-align: center;
+}
+
 div{
 margin: auto;
 padding: auto;
