@@ -2,6 +2,17 @@ h1 {
 text-align: center;
 }
 
+.text {
+color: yellow;
+}
+
+body {
+background-color: #2bc4ff;
+}
+
+.menu {
+width:200px;
+}
 
 #menu ul{
 margin: auto;
