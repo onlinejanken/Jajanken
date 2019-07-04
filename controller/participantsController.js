@@ -18,6 +18,8 @@ router.post('/wait/:roomId', (req, res) => {
         if (typeof row !== 'undefined') {
             if (row.num == row.maxnum) {
                 error = 'ルームは満員です';
+            } else {
+                req.session.playerNum = row.maxnum;
             }
         } else {
             error = '指定したルームは存在しません';

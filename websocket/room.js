@@ -1,16 +1,18 @@
 module.exports = (app, http, socket) => {
     const io = socket.listen(http);
     io.sockets.on("connection", (socket) => {
+        let roomId;
 
         // 入室したとき
-        socket.on('enter', (roomId) => {
+        socket.on('enter', (id) => {
+            roomId = id;
             socket.join(roomId);
-            io.to(roomId).emit('playerNum', io.sockets.client(roomId).length);  // ルームの参加人数を送信
+            io.to(roomId).emit('countUpdate', io.sockets.adapter.rooms[`${roomId}`].length);  // ルームの参加人数を送信
         });
 
         // スタートの判定
-        socket.on('start', (playerNum) => {
-            if (playerNum == io.sockets.client(roomId).length) {
+        socket.on('startCheck', (playerNum) => {
+            if (playerNum == io.sockets.adapter.rooms[`${roomId}`].length) {
                 io.to(roomId).emit('start', playerNum);
             }
         });
@@ -23,22 +25,18 @@ module.exports = (app, http, socket) => {
         socket.on('command', (data) => {  // プレイヤー名とじゃんけんの手のデータを受け取る
             let playerList = [];  // プレイヤーのデータを格納する配列
             playerList.push(data);
-            if (info.length == io.sockets.client(roomId).length) {  // じゃんけんの手を出した人数を確認
+            if (info.length == io.sockets.adapter.rooms[`${roomId}`].length) {  // じゃんけんの手を出した人数を確認
                 io.to(roomId).emit('judge', require('../src/judge.js')(playerList));  // じゃんけんの結果を送信
             }
-        });
-        //  メッセージ送信（送信者にも送られる）
-        socket.on("C_to_S_message", (data) => {
-
-        });
-
-        // ブロードキャスト（送信者以外の全員に送信）
-        socket.on("C_to_S_broadcast", (data) => {
         });
 
         // 切断したとき
         socket.on("disconnect", () => {
-            io.to(roomId).emit('playerNum', io.sockets.client(roomId).length);  // ルームの参加人数を送信
+            if (typeof io.sockets.adapter.rooms[`${roomId}`] === 'undefined') {
+                io.to(roomId).emit('countUpdate', 0);  // ルームの参加人数を送信
+            } else {
+                io.to(roomId).emit('countUpdate', io.sockets.adapter.rooms[`${roomId}`].length);  // ルームの参加人数を送信
+            }
         });
     });
 }
