@@ -40,21 +40,10 @@ body {
     right: 0px;
     width: 500px;
     height: 500px;
-    margin:auto;
-    background:
-    linear-gradient(
-      90deg,
-      rgba(208, 147, 82, 0.6),
-      rgba(192, 134, 70, 0.6) 60%,
-      rgba(208, 147, 82, 0.6)
-    ),
-    repeating-radial-gradient(
-      ellipse at 60% 500%,
-      #c08646,
-      #c08646 0.2%,
-      #d09352 0.6%,
-      #d09352 1%
-    );
+    margin:auto;/*文字色*/
+    background: linear-gradient(-45deg,#05FBFF,#1D62F0) fixed ,fixed;
+    background-size: cover;
+    border: solid 3px #6091d3;
     border-radius: 10px;
 }
 
@@ -126,5 +115,5 @@ body {
     position: relative;
     top: 40px;
     left: 50px;
-    color: #98EFE6;
+    color: yellow;
 }
