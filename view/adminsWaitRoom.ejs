@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="ja">
 <link rel="stylesheet" type="text/css" href="/public/css/adminsWaitRoom.css">
-<script type="text/javascript" src="/public/javascript/adminsWaitRoom.js"></script>
+<script type="text/javascript" src="/socket.io/socket.io.js"></script>
 <meta content="html,css,javascript" />
 
 <head>
@@ -11,19 +11,21 @@
 
 <body>
   <h1><%- session.username %> さんの部屋番号は</h1>
-  <h1><%- session.roomId %></h1>
+  <h1 id="roomId"><%- session.roomId %></h1>
   <h1>です。</h1>
 
-  <h2>現在 0 / <%- session.playerNum %> 人</h2><br>
+  <h2>現在 <div id="currentNum">0</div> / <div id="playerNum"><%- session.playerNum %></div> 人</h2><br>
 
   <div id="exit">
-  
+
     <form method="GET" action="/">
       <button type="submit" id="exit" value="exit">やっぱりやめる</button>
     </form>
-    <button type="button2" id="next" value="next">このまま始める</button>
+    <button id="startButton">今いる人数で始める</button>
+    <!-- <button type="button2" id="next" value="next">このまま始める</button> -->
   </div>
-  
+
+  <script type="text/javascript" src="/public/javascript/adminsWaitRoom.js"></script>
 </body>
 
 </html>
