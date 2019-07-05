@@ -8,13 +8,17 @@
   <meta charset="UTF-8">
   <title>待機画面</title>
 </head>
+
 <body>
   <h1><%- session.username %>さん</h1>
-  <h1>現在<div id="currentNum">0</div>/<div id="playerNum"><%- session.playerNum %></div></h1>
+  <h1>現在<div id="currentNum">0</div>/<div id="playerNum"><%- session.playerNum %></div>
+  </h1>
   <div class="wait">待機しています</div>
   <button id="startButton">スタート</button>
-  <div class="roomId"> <h1 id="roomId"><%- session.roomId %>に接続しています。</h1></div>
-
+  <h1>
+    <div id="roomId" class="roomId"><%- session.roomId %></div>に接続しています。
+  </h1>
   <script type="text/javascript" src="/public/javascript/participantsWaitRoom.js"></script>
 </body>
+
 </html>

@@ -1,12 +1,22 @@
 module.exports = (app, http, socket) => {
+    const roomModel = require('../model/room.js');
     const io = socket.listen(http);
     io.sockets.on("connection", (socket) => {
         let roomId;
 
-        // 入室したとき
+        // 管理者が入室したとき
+        socket.on('createRoom', (room) => {
+            roomId = room.roomId;
+            socket.join(roomId);
+            roomModel.addRoom(room.roomId, room.master, room.playerNum);
+            io.to(roomId).emit('countUpdate', io.sockets.adapter.rooms[`${roomId}`].length);  // ルームの参加人数を送信
+        });
+
+        // 参加者が入室したとき
         socket.on('enter', (id) => {
             roomId = id;
             socket.join(roomId);
+            roomModel.addMember(roomId);
             io.to(roomId).emit('countUpdate', io.sockets.adapter.rooms[`${roomId}`].length);  // ルームの参加人数を送信
         });
 
@@ -16,8 +26,10 @@ module.exports = (app, http, socket) => {
                 io.to(roomId).emit('start', playerNum);
             }
         });
+
         // 開始ボタンを押したときの処理(人数を満たさずに開始する)
         socket.on('startButton', (playerNum) => {
+            // roomModel.capacityChange(roomId, playerNum);  現状必要かどうか分からないのでコメントアウトしておく
             io.to(roomId).emit('start', playerNum);
         });
 
@@ -33,8 +45,10 @@ module.exports = (app, http, socket) => {
         // 切断したとき
         socket.on("disconnect", () => {
             if (typeof io.sockets.adapter.rooms[`${roomId}`] === 'undefined') {
+                roomModel.deleteRoom(roomId);
                 io.to(roomId).emit('countUpdate', 0);  // ルームの参加人数を送信
             } else {
+                roomModel.reduceMember(roomId);
                 io.to(roomId).emit('countUpdate', io.sockets.adapter.rooms[`${roomId}`].length);  // ルームの参加人数を送信
             }
         });

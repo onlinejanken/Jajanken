@@ -2,9 +2,14 @@ const socket = io();
 const startButton = document.getElementById('startButton');
 const roomId = document.getElementById('roomId').innerHTML;
 const playerNum = document.getElementById('playerNum').innerText;
+const roomMaster = document.getElementById('roomMaster').innerText;
 
 // 入室処理
-socket.emit('enter', roomId);
+socket.emit('createRoom', {
+    roomId: roomId,
+    roomMaster: roomMaster,
+    playerNum: playerNum
+});
 
 // 人数の更新
 socket.on('countUpdate', (currentNum) => {
