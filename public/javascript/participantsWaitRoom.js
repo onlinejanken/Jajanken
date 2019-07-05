@@ -12,11 +12,6 @@ socket.on('countUpdate', (currentNum) => {
     socket.emit('startCheck', playerNum);
 });
 
-// スタートボタンを押した時
-startButton.addEventListener('click', (currentNum) => {
-    socket.emit('startButton', currentNum);
-});
-
 // スタートする時の処理
 socket.on('start', (currentNum) => {
     let form = document.createElement('form');
