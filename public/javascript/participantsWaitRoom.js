@@ -12,12 +12,21 @@ socket.on('countUpdate', (currentNum) => {
     socket.emit('startCheck', playerNum);
 });
 
-// スタートボタンを押した時
-startButton.addEventListener('click', (currentNum) => {
-    socket.emit('startButton', currentNum);
-});
-
 // スタートする時の処理
 socket.on('start', (currentNum) => {
-    window.location.href = 'path';  // ルームのパスを書く
+    let form = document.createElement('form');
+    form.setAttribute('action', '/rooms');
+    form.setAttribute('method', 'POST');
+    form.style.display = "none";
+    document.body.appendChild(form);
+
+    if (currentNum !== 'undefined') {
+        let input = document.createElement('input');
+        input.setAttribute('type', 'hidden');
+        input.setAttribute('name', 'currentNum');
+        input.setAttribute('value', currentNum);
+        form.appendChild(input);
+    }
+
+    form.submit();
 });

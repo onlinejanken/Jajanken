@@ -25,6 +25,7 @@ app.use(session({
 app.use('/', require('./controller/titleController.js'));
 app.use('/admins', require('./controller/adminsController.js'));
 app.use('/participants', require('./controller/participantsController.js'));
+app.use('/rooms', require('./controller/roomsController.js'));
 
 
 require('./websocket/room')(app, app.listen(3000), socket);
