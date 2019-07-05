@@ -10,7 +10,9 @@
 </head>
 
 <body>
-  <h1><%- session.username %> さんの部屋番号は</h1>
+  <h1>
+    <div id="roomMaster"><%- session.username %></div> さんの部屋番号は
+  </h1>
   <h1 id="roomId"><%- session.roomId %></h1>
   <h1>です。</h1>
 

@@ -1,5 +1,6 @@
 const db = require('../db/room.js').db;
 
+// ルームを検索する
 const searchRoom = (roomId) => {
     return new Promise((resolve, reject) => {
         db.serialize(() => {
@@ -14,6 +15,7 @@ const searchRoom = (roomId) => {
     });
 };
 
+// ルームを追加(作成)する
 const addRoom = (roomId, master, playerNum) => {
     db.serialize(() => {
         const stmt = db.prepare(`insert into room (id, master, num, maxnum) values (?, ?, ?, ?)`);
@@ -21,12 +23,14 @@ const addRoom = (roomId, master, playerNum) => {
     });
 };
 
+// ルームを削除する
 const deleteRoom = (roomId) => {
     db.serialize(() => {
         db.run(`delete from room where id = '${roomId}'`);
     });
 };
 
+// ルームの人数を一人増やす
 const addMember = (roomId) => {
     db.serialize(() => {
         searchRoom(roomId).then((row) => {
@@ -36,6 +40,7 @@ const addMember = (roomId) => {
     });
 };
 
+// ルームの人数を一人減らす
 const reduceMember = (roomId) => {
     db.serialize(() => {
         searchRoom(roomId).then((row) => {
@@ -45,10 +50,21 @@ const reduceMember = (roomId) => {
     });
 };
 
+// ルームの定員を変更する
+const capacityChange = (roomId, capacity) => {
+    db.serialize(() => {
+        searchRoom(roomId).then((row) => {
+            const stmt = db.prepare(`update room set maxnum = ? where id = ?`);
+            stmt.run(capacity, row.id);
+        });
+    });
+};
+
 module.exports = {
     searchRoom: searchRoom,
     addRoom: addRoom,
     deleteRoom: deleteRoom,
     addMember: addMember,
-    reduceMember: reduceMember
+    reduceMember: reduceMember,
+    capacityChange: capacityChange
 };
