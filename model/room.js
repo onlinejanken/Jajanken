@@ -34,8 +34,10 @@ const deleteRoom = (roomId) => {
 const addMember = (roomId) => {
     db.serialize(() => {
         searchRoom(roomId).then((row) => {
-            const stmt = db.prepare(`update room set num = ? where id = ?`);
-            stmt.run(row.num + 1, row.id);
+            if (typeof row !== 'undefined') {
+                const stmt = db.prepare(`update room set num = ? where id = ?`);
+                stmt.run(row.num + 1, row.id);
+            }
         });
     });
 };
@@ -44,8 +46,10 @@ const addMember = (roomId) => {
 const reduceMember = (roomId) => {
     db.serialize(() => {
         searchRoom(roomId).then((row) => {
-            const stmt = db.prepare(`update room set num = ? where id = ?`);
-            stmt.run(row.num - 1, row.id);
+            if (typeof row !== 'undefined') {
+                const stmt = db.prepare(`update room set num = ? where id = ?`);
+                stmt.run(row.num - 1, row.id);
+            }
         });
     });
 };
@@ -54,8 +58,10 @@ const reduceMember = (roomId) => {
 const capacityChange = (roomId, capacity) => {
     db.serialize(() => {
         searchRoom(roomId).then((row) => {
-            const stmt = db.prepare(`update room set maxnum = ? where id = ?`);
-            stmt.run(capacity, row.id);
+            if (typeof row !== 'undefined') {
+                const stmt = db.prepare(`update room set maxnum = ? where id = ?`);
+                stmt.run(capacity, row.id);
+            }
         });
     });
 };
