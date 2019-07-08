@@ -1,9 +1,10 @@
 module.exports = (app, http, socket) => {
     const roomModel = require('../model/room.js');
     const io = socket.listen(http);
+    let playerList = {};  // プレイヤーのデータを格納するオブジェクト
+
     io.sockets.on("connection", (socket) => {
         let roomId;
-        let playerList = [];  // プレイヤーのデータを格納する配列
 
         // 管理者が入室したとき
         socket.on('createRoom', (room) => {
@@ -37,16 +38,17 @@ module.exports = (app, http, socket) => {
 
         socket.on('gameStart', (id) => {
             roomId = id;
+            playerList[roomId] = [];  // 部屋ごとのプレイヤーリストを作成
             socket.join(roomId);
             io.to(roomId).emit('countUpdate', io.sockets.adapter.rooms[`${roomId}`].length);  // ルームの参加人数を送信
         });
 
         // じゃんけんを行う処理
         socket.on('command', (data) => {  // プレイヤー名とじゃんけんの手のデータを受け取る
-            playerList.push(data);
-            if (playerList.length == io.sockets.adapter.rooms[`${roomId}`].length) {  // じゃんけんの手を出した人数を確認
-                io.to(roomId).emit('judge', require('../src/judge.js')(playerList));  // じゃんけんの結果を送信
-                playerList = [];
+            playerList[roomId].push(data);  // ルームのプレイヤーリストに送られてきたデータを挿入
+            if (playerList[roomId].length == io.sockets.adapter.rooms[`${roomId}`].length) {  // じゃんけんの手を出した人数を確認
+                io.to(roomId).emit('judge', require('../src/judge.js')(playerList[roomId]));  // じゃんけんの結果を送信
+                playerList[roomId] = [];  // ルームのプレイヤーリストを空にする
             }
         });
 
