@@ -1,25 +1,27 @@
 <!doctype html>
 <html lang="ja">
 
-<link rel="stylesheet" type="text/css" href="public/css/room.css">
-
 <head>
-<title>
-    オンラインじゃんけん！
+    <title>
+        オンラインじゃんけん！
     </title>
+    <link rel="stylesheet" type="text/css" href="/public/css/room.css">
+    <script type="text/javascript" src="/socket.io/socket.io.js"></script>
 </head>
+
 <body id="body">
-    <div id="username"><%- session.username %></div>
+    <div id="userName"><%- session.username %></div>
     <div id="roomId"><%- session.roomId %></div>
     <h2>じゃんけん</h2><br>
     <div class="timer">
-       <span id="tiemr">あと10秒</span>
+        <span id="timer">あと10秒</span>
     </div>
     <div class="images"></div>
-        <img id="rock" src="public/image/rock.png" onclick="rock()">
-        <img id="paper" src="public/image/paper.png" onclick="paper()">
-        <img id="scissors" src="public/image/scissors.png" onclick="scissors()">
+    <img id="rock" src="/public/image/rock.png" onclick="rock()">
+    <img id="paper" src="/public/image/paper.png" onclick="paper()">
+    <img id="scissors" src="/public/image/scissors.png" onclick="scissors()">
     </div>
-<script type="text/javascript" src="public/javascript/room.js"></script>
+    <script type="text/javascript" src="/public/javascript/room.js"></script>
 </body>
+
 </html>

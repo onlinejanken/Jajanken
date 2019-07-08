@@ -28,6 +28,6 @@ app.use('/participants', require('./controller/participantsController.js'));
 app.use('/rooms', require('./controller/roomsController.js'));
 
 
-require('./websocket/room')(app, app.listen(3000), socket);
+require('./websocket/room.js')(app, app.listen(3000), socket);
 
 console.log("Start Server" + new Date);

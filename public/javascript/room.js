@@ -1,30 +1,61 @@
+const socket = io();
+const roomId = document.getElementById('roomId').innerHTML;
+const userName = document.getElementById('userName').innerHTML;
+
 let player = {};
-player.name = document.getElementById('username');
-let roomId = document.getElementById('roomId');
+player.name = userName;
 window.onload = countDown;
 
-function countDown(){
+function countDown() {
     let count = 10;
-    let id =  setInterval(function(){
+    let id = setInterval(function () {
         count--;
-        document.getElementById('timer').textContent= 'あと' + count + '秒';
-        if(count <= 0){
+        document.getElementById('timer').textContent = 'あと' + count + '秒';
+        if (count <= 0) {
             clearInterval(id);
         }
-    },1000);
+    }, 1000);
 }
 
-function rock(){
+function rock() {
     player.hand = 0;
+    socket.emit('command', player);
     console.log(player);
 }
 
-function paper(){
+function paper() {
     player.hand = 1;
+    socket.emit('command', player);
     console.log(player);
 }
 
-function scissors(){
+function scissors() {
     player.hand = 2;
+    socket.emit('command', player);
     console.log(player);
 }
+
+// ゲームの開始処理
+socket.emit('gameStart', roomId);
+
+// 判定が終了した後のページの遷移
+socket.on('judge', (resultData) => {
+    for (let list of resultData) {
+        if (list.name == userName) {
+            let form = document.createElement('form');
+            form.setAttribute('action', '/rooms/results');
+            form.setAttribute('method', 'POST');
+            form.style.display = "none";
+            document.body.appendChild(form);
+
+            if (list !== 'undefined') {
+                let input = document.createElement('input');
+                input.setAttribute('type', 'hidden');
+                input.setAttribute('name', 'resultData');
+                input.setAttribute('value', list);
+                form.appendChild(input);
+            }
+            form.submit();
+        }
+    }
+});
