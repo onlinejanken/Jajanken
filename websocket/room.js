@@ -55,7 +55,8 @@ module.exports = (app, http, socket) => {
         // 切断したとき
         socket.on("disconnect", () => {
             if (typeof io.sockets.adapter.rooms[`${roomId}`] === 'undefined') {
-                roomModel.deleteRoom(roomId);
+                delete playerList[roomId];  // ルームのプレイヤーリストを削除
+                roomModel.deleteRoom(roomId);  // ルームの削除
                 io.to(roomId).emit('countUpdate', 0);  // ルームの参加人数を送信
             } else {
                 roomModel.reduceMember(roomId);
