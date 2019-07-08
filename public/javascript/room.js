@@ -1,6 +1,9 @@
 const socket = io();
 const roomId = document.getElementById('roomId').innerHTML;
 const userName = document.getElementById('userName').innerHTML;
+let rockButton = document.getElementById('rock');
+let paperButton = document.getElementById('paper');
+let scissorsButton = document.getElementById('scissors');
 
 let player = {};
 player.name = userName;
@@ -19,20 +22,20 @@ function countDown() {
 
 function rock() {
     player.hand = 0;
+    rockButton.onclick = paperButton.onclick = scissorsButton.onclick = null;
     socket.emit('command', player);
-    console.log(player);
 }
 
 function paper() {
     player.hand = 1;
+    rockButton.onclick = paperButton.onclick = scissorsButton.onclick = null;
     socket.emit('command', player);
-    console.log(player);
 }
 
 function scissors() {
     player.hand = 2;
+    rockButton.onclick = paperButton.onclick = scissorsButton.onclick = null;
     socket.emit('command', player);
-    console.log(player);
 }
 
 // ゲームの開始処理
