@@ -55,10 +55,10 @@ socket.on('judge', (resultData) => {
                 let input = document.createElement('input');
                 input.setAttribute('type', 'hidden');
                 input.setAttribute('name', 'resultData');
-                input.setAttribute('value', list);
+                input.setAttribute('value', JSON.stringify(list));
                 form.appendChild(input);
+                form.submit();
             }
-            form.submit();
         }
     }
 });
