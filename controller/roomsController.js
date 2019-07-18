@@ -7,7 +7,7 @@ router.post('/', (req, res) => {
 });
 
 router.post('/results', (req, res) => {
-    req.session.resultData = req.body.resultData;
+    req.session.resultData = JSON.parse(req.body.resultData);
 
     res.render('roomResult', { session: req.session });
 });
