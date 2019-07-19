@@ -12,12 +12,18 @@
 <body>
   <h1>じゃんけん結果</h1>
 
-  <%- session.resultData.judge %>
+  <!-- <%- session.resultData.judge %> -->
   <!-- 勝敗で表示を分岐したい -->
+  <% if (session.resultData.judge == 1) { %>
   <div align="center"><img src="/public/image/win.png" width="496" height="330"></div>
+  <% } %>
+  <% if (session.resultData.judge == -1) { %>
   <div align="center"><img src="/public/image/lose.png" width="496" height="330"></div>
+  <% } %>
   <div id="exit">
-    <button type="submit" id="next" value="next">じゃんけんを続ける</button>
+    <form method="POST" action="/rooms/wait">
+      <button type="submit" id="next" value="next">じゃんけんを続ける</button>
+    </form>
     <form method="GET" action="/">
       <button type="submit" id="exit" value="exit">トップページ</button>
     </form>

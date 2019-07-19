@@ -27,13 +27,13 @@ function rock() {
 }
 
 function paper() {
-    player.hand = 1;
+    player.hand = 2;
     rockButton.onclick = paperButton.onclick = scissorsButton.onclick = null;
     socket.emit('command', player);
 }
 
 function scissors() {
-    player.hand = 2;
+    player.hand = 1;
     rockButton.onclick = paperButton.onclick = scissorsButton.onclick = null;
     socket.emit('command', player);
 }
