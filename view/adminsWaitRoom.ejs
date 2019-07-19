@@ -11,9 +11,13 @@
 
 <body>
   <h1>
-    <div id="roomMaster"><font color="yellow"><%- session.username %></font></div> さんの部屋番号は
+    <div id="roomMaster">
+      <font color="yellow"><%- session.username %></font>
+    </div> さんの部屋番号は
   </h1>
-  <h1 id="roomId"><font color="yellow"><%- session.roomId %></font>です</h1>
+  <h1 id="roomId">
+    <font color="yellow"><%- session.roomId %></font>
+  </h1>
 
   <h2>現在 <div id="currentNum">0</div> / <div id="playerNum"><%- session.playerNum %></div> 人</h2><br>
 
