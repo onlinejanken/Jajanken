@@ -1,6 +1,6 @@
 const socket = io();
 const startButton = document.getElementById('startButton');
-const roomId = document.getElementById('roomId').innerHTML;
+const roomId = document.getElementById('roomId').innerText;
 const playerNum = document.getElementById('playerNum').innerText;
 const roomMaster = document.getElementById('roomMaster').innerText;
 
