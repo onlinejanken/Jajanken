@@ -21,6 +21,8 @@ margin: auto;
 }
 
 #exit button{
+position: relative;
+top: 20px;
 display: block;
 border-left: 20px solid #474655;
 border-top: 1px solid #474655;
@@ -30,8 +32,9 @@ background-color: #fff;
 padding: 3px 10px;
 text-decoration: none;
 color: #333;
-width: 300px;
+width: 400px;
 margin: 5px auto;
+margin-top: 50px;
 text-align: center;
 font-size: 40px;
 }
