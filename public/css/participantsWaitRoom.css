@@ -15,9 +15,8 @@ h1 {
     height: 30px;
 }
 .roomId{
+    text-align: center;
     position: absolute;
-    bottom: 0px; /** 場合によっては微調整 **/
-    right: 0px;  /** 場合によっては微調整 **/
 }
 div{
     display: inline;
@@ -30,6 +29,35 @@ div{
     height: 250px;
     margin: 20px;
     font-size:40px;
-    color: red;
+    color: white;
     font-family: 'Sawarabi Mincho', sans-serif;;
-    }
+}
+.button{
+    width:400px;
+    border-left: 20px solid #474655;
+    border-top: 1px solid #474655;
+    border-right: 1px solid #474655;
+    border-bottom: 1px solid #474655;
+    background-color: #fff;
+    font-size :24px;
+    font-weight:bold;
+    text-decoration:none;
+    text-align:center;
+    padding:8px 0 10px;
+    color:#333;
+}
+.button:hover{
+    border-left: 8px solid #474655; /*飛び出してる感じ*/
+    border-top: 1px solid #474655;
+    border-right: 1px solid #474655;
+    border-bottom: 1px solid #474655;
+    background-color: #d7efd7;
+}
+.button:active{
+    transform: translateY(3px);
+    background-color: #ffcc00;
+}
+.wrap{
+    text-align: center;
+    display: block;
+}
