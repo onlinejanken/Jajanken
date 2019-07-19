@@ -7,7 +7,9 @@ body {
     height: 100%;
     overflow: hidden;
 }
-
+.button{
+    width: 800px;
+}
 h1 {
     top: 40px;
     font-size:20px;
