@@ -14,10 +14,10 @@ router.post('/results', (req, res) => {
     const resultData = JSON.parse(req.body.resultData)
     if (resultData.judge == 0) {
         res.render('room', { session: req.session });
+    } else {
+        req.session.resultData = resultData;
+        res.render('roomResult', { session: req.session });
     }
-    req.session.resultData = resultData;
-
-    res.render('roomResult', { session: req.session });
 });
 
 module.exports = router;
