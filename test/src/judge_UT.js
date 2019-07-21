@@ -86,4 +86,30 @@ describe('judgeモジュールのテスト', () => {
             }
         });
     });
+
+    describe('入力されなかったときの負け判定(無条件で未入力の人以外は勝ち)', () => {
+        let playerList = [{ name: 'player1' }, { name: 'player2' }, { name: 'player3' }, { name: 'player4' }];
+        it('未入力の人以外であいこになる場合', () => {
+            playerList[0].hand = 0;
+            playerList[1].hand = 1;
+            playerList[2].hand = 2;
+            playerList[3].hand = -1;
+            playerList = judge(playerList);
+            assert.strictEqual(playerList[0].judge, 1);
+            assert.strictEqual(playerList[1].judge, 1);
+            assert.strictEqual(playerList[2].judge, 1);
+            assert.strictEqual(playerList[3].judge, -1);
+        });
+        it('未入力の人以外で勝敗がつく場合', () => {
+            playerList[0].hand = 0;
+            playerList[1].hand = 2;
+            playerList[2].hand = 2;
+            playerList[3].hand = -1;
+            playerList = judge(playerList);
+            assert.strictEqual(playerList[0].judge, 1);
+            assert.strictEqual(playerList[1].judge, 1);
+            assert.strictEqual(playerList[2].judge, 1);
+            assert.strictEqual(playerList[3].judge, -1);
+        });
+    });
 });
