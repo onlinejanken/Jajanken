@@ -24,14 +24,11 @@ margin: auto;
 position: relative;
 top: 20px;
 display: block;
-border-left: 20px solid #474655;
-border-top: 1px solid #474655;
-border-right: 1px solid #474655;
-border-bottom: 1px solid #474655;
-background-color: #fff;
+color:#fff;
+background-color:#59b1eb;
+border-radius:25px;
 padding: 3px 10px;
 text-decoration: none;
-color: #333;
 width: 400px;
 margin: 5px auto;
 margin-top: 50px;
@@ -39,15 +36,16 @@ text-align: center;
 font-size: 40px;
 }
 #exit button:hover{
-border-left: 8px solid #474655; /*飛び出してる感じ*/
-border-top: 1px solid #474655;
-border-right: 1px solid #474655;
-border-bottom: 1px solid #474655;
-background-color: #d7efd7;
+    border-left: 1px solid #474655; /*飛び出してる感じ*/
+    border-top: 1px solid #474655;
+    border-right: 1px solid #474655;
+    border-bottom: 1px solid #474655;
+    background-color: white;
+    color: #59b1eb;
 }
 
 #exit button:active {
-transform: translateY(3px);
-background-color: #ffcc00;
-
+    transform: translateY(3px);
+    color:#fff;
+    background-color: #59b1eb;
 }

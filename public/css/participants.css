@@ -20,28 +20,27 @@ input{
 }
 .button{
     width:200px;
-    border-left: 20px solid #474655;
-    border-top: 1px solid #474655;
-    border-right: 1px solid #474655;
-    border-bottom: 1px solid #474655;
-    background-color: #fff;
+    color:#fff;
+    background-color:#59b1eb;
+    border-radius:25px;
     font-size :24px;
     font-weight:bold;
     text-decoration:none;
     text-align:center;
     padding:8px 0 10px;
-    color:#333;
 }
 .button:hover{
-    border-left: 8px solid #474655; /*飛び出してる感じ*/
+    border-left: 1px solid #474655; /*飛び出してる感じ*/
     border-top: 1px solid #474655;
     border-right: 1px solid #474655;
     border-bottom: 1px solid #474655;
-    background-color: #d7efd7;
+    background-color: white;
+    color: #59b1eb;
 }
 .button:active{
     transform: translateY(3px);
-    background-color: #ffcc00;
+    color:#fff;
+    background-color: #59b1eb;
 }
 .username{
     position : relative;
