@@ -29,3 +29,18 @@ img{
 .images{
     text-align: center;
 }
+
+.rock:hover {
+    transform: scale(1.2,1.2); /*画像の拡大*/
+    cursor: pointer; /*カーソルをポインターにする*/
+}
+
+.paper:hover{
+    transform: scale(1.2,1.2); /*画像の拡大*/
+    cursor: pointer; /*カーソルをポインターにする*/
+}
+
+.scissors:hover{
+    transform: scale(1.2,1.2); /*画像の拡大*/
+    cursor: pointer; /*カーソルをポインターにする*/
+}
