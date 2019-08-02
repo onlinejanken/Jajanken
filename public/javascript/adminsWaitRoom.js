@@ -1,6 +1,6 @@
 const socket = io();
 const startButton = document.getElementById('startButton');
-const roomId = document.getElementById('roomId').innerText;
+const roomId = document.getElementById('roomId').innerText.replace(/\s+/g, '');  // ブラウザによって後ろに空白が入るので除去する
 const playerNum = document.getElementById('playerNum').innerText;
 const roomMaster = document.getElementById('roomMaster').innerText;
 
