@@ -4,10 +4,24 @@ const userName = document.getElementById('userName').innerHTML;
 let rockButton = document.getElementById('rock');
 let paperButton = document.getElementById('paper');
 let scissorsButton = document.getElementById('scissors');
-
 let player = {};
+let background = document.createElement('div');
+
 player.name = userName;
 window.onload = countDown;
+
+background.style.zIndex = '800';
+background.style.position = 'absolute';
+background.style.top = '0px';
+background.style.left = '0px';
+background.style.right = '0px';
+background.style.bottom = '0px';
+background.style.opacity = 0.0;
+
+/*触れなくする*/
+function clickProtect(){
+    document.body.appendChild(background);
+}
 
 function countDown() {
     let count = 10;
@@ -24,18 +38,27 @@ function rock() {
     player.hand = 0;
     rockButton.onclick = paperButton.onclick = scissorsButton.onclick = null;
     socket.emit('command', player);
+    paperButton.style.opacity = 0.5;
+    scissorsButton.style.opacity = 0.5;
+    clickProtect()
 }
 
 function paper() {
     player.hand = 2;
     rockButton.onclick = paperButton.onclick = scissorsButton.onclick = null;
     socket.emit('command', player);
+    rockButton.style.opacity = 0.6;
+    scissorsButton.style.opacity = 0.5;
+    clickProtect()
 }
 
 function scissors() {
     player.hand = 1;
     rockButton.onclick = paperButton.onclick = scissorsButton.onclick = null;
     socket.emit('command', player);
+    rockButton.style.opacity = 0.5;
+    paperButton.style.opacity = 0.5;
+    clickProtect()
 }
 
 // ゲームの開始処理
