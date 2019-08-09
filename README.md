@@ -8,16 +8,18 @@
 
 ### パッケージのインストール
 ```
-npm install
+$ npm install
 ```
 
 ### 実行
 ```
-node app.js
+$ node app.js
 ```
 
 ## 使用技術
 
-- node.js 10.15.3
+- Node.js 10.15.3
 - npm 6.9.0
-- express 4.16.4
+- Express 4.16.4
+- Socket.io 2.2.0
+- SQLite3 4.0.8
