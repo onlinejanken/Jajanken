@@ -27,6 +27,18 @@ app.use('/admins', require('./controller/adminsController.js'));
 app.use('/participants', require('./controller/participantsController.js'));
 app.use('/rooms', require('./controller/roomsController.js'));
 
+app.use((req, res, next) => {
+    let err = new Error('指定されたURLが見つかりませんでした。');
+    err.status = 404;
+    next(err);
+});
+app.use((err, req, res, next) => {
+    res.locals.message = err.message;
+    res.locals.error = req.app.get('env') === 'development' ? err : {};
+
+    res.status(err.status || 500);
+    res.render('error', { error: err });
+});
 
 require('./websocket/room.js')(app, app.listen(3000), socket);
 
