@@ -1,1 +1,15 @@
-<%- error.message %>
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <title>エラーページ</title>
+    <link rel="stylesheet" type="text/css" href="public/css/error.css">
+    <meta content="html,css,javascript"/>
+</head>
+<body>
+    <div class="center"><%- error.message %>
+    </div>
+    <button class="button" onclick="returnTop()">Topに戻る</button>
+    <script type="text/javascript" src="public/javascript/error.js"></script>
+</body>
+
+</html>
