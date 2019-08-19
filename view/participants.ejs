@@ -12,7 +12,7 @@
     <h1 class="username">ようこそ <font color="red"><%- session.username %></font> さん</h1>
     <h1 class="text">部屋番号を入力してください。</h1>
     <div class="wrap">
-        <input type="text" id="roomId">
+        <input type="text" id="roomId" autofocus>
         <h2></h2>
         <% if (typeof error !== 'undefined') { %>
         <h2><%= error %></h2>
