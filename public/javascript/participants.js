@@ -1,5 +1,6 @@
 const ok = document.getElementById('ok');
 ok.addEventListener('click', returnClick);
+
 //okボタンを押すとtitleに戻る
 function returnClick() {
     getForm(null, '');
@@ -11,7 +12,11 @@ send.addEventListener('click', sendForm);
 //送信ボタンを押すと入力した文字列をparticipantsWaitRoomに送る。
 function sendForm() {
     let roomId = document.getElementById('roomId').value;
-    postForm(roomId, 'participants');
+    if (roomId === '') {
+        document.getElementById('error').innerText = 'ルームIDを入力してください';
+    } else {
+        postForm(roomId, 'participants');
+    }
 }
 
 //ページ遷移関数(post) 
@@ -22,8 +27,6 @@ function postForm(value, nextScreen) {
 
     form.method = 'POST';
     form.action = '/' + nextScreen + '/wait' + '/' + value;
-
-
 
     request.type = 'hidden'; //入力フォームが表示されないように
     request.name = 'text';
@@ -42,8 +45,6 @@ function getForm(value, nextScreen) {
 
     form.method = 'GET';
     form.action = '/' + nextScreen;
-
-
 
     request.type = 'hidden'; //入力フォームが表示されないように
     request.name = 'text';
