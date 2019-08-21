@@ -6,6 +6,7 @@ let paperButton = document.getElementById('paper');
 let scissorsButton = document.getElementById('scissors');
 let player = {};
 let background = document.createElement('div');
+let time;
 
 player.name = userName;
 window.onload = countDown;
@@ -19,17 +20,20 @@ background.style.bottom = '0px';
 background.style.opacity = 0.0;
 
 /*触れなくする*/
-function clickProtect(){
+function clickProtect() {
     document.body.appendChild(background);
 }
 
 function countDown() {
     let count = 10;
-    let id = setInterval(function () {
+    time = setInterval(function () {
         count--;
         document.getElementById('timer').textContent = 'あと' + count + '秒';
         if (count <= 0) {
-            clearInterval(id);
+            player.hand = -1;
+            rockButton.onclick = paperButton.onclick = scissorsButton.onclick = null;
+            socket.emit('command', player);
+            clearInterval(time);
         }
     }, 1000);
 }
@@ -41,6 +45,8 @@ function rock() {
     paperButton.style.opacity = 0.5;
     scissorsButton.style.opacity = 0.5;
     clickProtect()
+    document.getElementById('timer').textContent = '他の人の入力を待っています';
+    clearInterval(time);
 }
 
 function paper() {
@@ -50,6 +56,8 @@ function paper() {
     rockButton.style.opacity = 0.6;
     scissorsButton.style.opacity = 0.5;
     clickProtect()
+    document.getElementById('timer').textContent = '他の人の入力を待っています';
+    clearInterval(time);
 }
 
 function scissors() {
@@ -59,6 +67,8 @@ function scissors() {
     rockButton.style.opacity = 0.5;
     paperButton.style.opacity = 0.5;
     clickProtect()
+    document.getElementById('timer').textContent = '他の人の入力を待っています';
+    clearInterval(time);
 }
 
 // ゲームの開始処理
@@ -74,7 +84,7 @@ socket.on('judge', (resultData) => {
             form.style.display = "none";
             document.body.appendChild(form);
 
-            if (list !== 'undefined') {
+            if (typeof list !== 'undefined') {
                 let input = document.createElement('input');
                 input.setAttribute('type', 'hidden');
                 input.setAttribute('name', 'resultData');

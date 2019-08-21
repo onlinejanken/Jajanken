@@ -14,9 +14,11 @@
     <div class="wrap">
         <input type="text" id="roomId" autofocus>
         <h2></h2>
-        <% if (typeof error !== 'undefined') { %>
-        <h2><%= error %></h2>
-        <% } %>
+        <h2 id="error">
+            <% if (typeof error !== 'undefined') { %>
+            <%= error %>
+            <% } %>
+        </h2>
         <button type="button" id="send" class="button">送信</button><br>
         <h1 class="text">入室をやめる。</h1>
         <button type="button" id="ok" class="button">OK</button>
