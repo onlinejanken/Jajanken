@@ -27,7 +27,6 @@ input{
     font-weight:bold;
     text-decoration:none;
     text-align:center;
-    padding:8px 0 10px;
 }
 .button:hover{
     border-left: 1px solid #474655; /*飛び出してる感じ*/
