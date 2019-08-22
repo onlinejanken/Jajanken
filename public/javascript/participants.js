@@ -8,6 +8,15 @@ function returnClick() {
 
 const send = document.getElementById('send');
 send.addEventListener('click', sendForm);
+//inputタグ内でenterを押す。
+function hoge(code)
+{
+	//エンターキー押下なら
+	if(13 === code)
+	{
+        sendForm();
+	}
+}
 
 //送信ボタンを押すと入力した文字列をparticipantsWaitRoomに送る。
 function sendForm() {
