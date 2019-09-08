@@ -6,10 +6,12 @@
   <title>番号生成画面</title>
   <meta content="html,css,javascript" />
   <link rel="stylesheet" type="text/css" href="/public/css/adminsWaitRoom.css">
+  <link rel="stylesheet" type="text/css" href="/public/css/bgm.css" >
   <script type="text/javascript" src="/socket.io/socket.io.js"></script>
 </head>
 
 <body>
+  <input type="button" value="♪" onclick="newwindow()" class="bgm">
   <h1>
     <div id="roomMaster">
       <font color="yellow"><%- session.username %></font>
@@ -30,6 +32,7 @@
   </div>
 
   <script type="text/javascript" src="/public/javascript/adminsWaitRoom.js"></script>
+  <script type="text/javascript" src="/public/javascript/bgm.js"></script>
 </body>
 
 </html>
