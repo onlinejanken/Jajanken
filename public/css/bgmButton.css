@@ -1,4 +1,4 @@
-.bgm{
+.bgmButton{
     font-size: 28px;
     position: relative;
     display: inline-block;
@@ -14,7 +14,7 @@
     transition: .4s;
 }
 
-.bgm:hover{
+.bgmButton:hover{
     -webkit-transform: rotate(10deg);
     transform: rotate(10deg);
 }

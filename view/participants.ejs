@@ -6,11 +6,11 @@
         オンラインじゃんけん！
     </title>
     <link rel="stylesheet" type="text/css" href="/public/css/participants.css">
-    <link rel="stylesheet" type="text/css" href="public/css/bgm.css" >
+    <link rel="stylesheet" type="text/css" href="public/css/bgmButton.css" >
 </head>
 
 <body>
-    <input type="button" value="♪" onclick="newwindow()" class="bgm">
+    <input type="button" value="♪" onclick="newwindow()" class="bgmButton">
     <h1 class="username">ようこそ <font color="red"><%- session.username %></font> さん</h1>
     <h1 class="text">部屋番号を入力してください。</h1>
     <div class="wrap">
@@ -25,7 +25,7 @@
         <button type="button" id="ok" class="button">OK</button>
     </div>
     <script type="text/javascript" src="/public/javascript/participants.js"></script>
-    <script type="text/javascript" src="public/javascript/bgm.js"></script>
+    <script type="text/javascript" src="public/javascript/bgmButton.js"></script>
 </body>
 
 </html>
