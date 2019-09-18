@@ -1,0 +1,14 @@
+body{
+    background-color: #2bc4ff;
+}
+h1{
+    margin: 0%;
+}
+.play{
+    text-align: center;
+    font-size: 200px;
+    color: #FF7C00;
+    background: -webkit-linear-gradient(#a6c0fe,#f68084);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
