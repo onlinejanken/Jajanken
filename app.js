@@ -27,6 +27,9 @@ app.use('/admins', require('./controller/adminsController.js'));
 app.use('/participants', require('./controller/participantsController.js'));
 app.use('/rooms', require('./controller/roomsController.js'));
 
+// api
+app.use('/api/bgms', require('./controller/api/bgms.jp'));
+
 app.use((req, res, next) => {
     let err = new Error('指定されたURLが見つかりませんでした。');
     err.status = 404;
