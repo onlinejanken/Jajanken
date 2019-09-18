@@ -6,12 +6,12 @@
   <title>待機画面</title>
   <meta content="html,css,javascript" />
   <link rel="stylesheet" type="text/css" href="/public/css/participantsWaitRoom.css">
-  <link rel="stylesheet" type="text/css" href="public/css/bgm.css" >
+  <link rel="stylesheet" type="text/css" href="public/css/bgmButton.css" >
   <script type="text/javascript" src="/socket.io/socket.io.js"></script>
 </head>
 
 <body>        
-  <input type="button" value="♪" onclick="newwindow()" class="bgm">
+  <input type="button" value="♪" onclick="newwindow()" class="bgmButton">
   <h1><font color="yellow" size="56px"><%- session.username %></font>さん</h1>
   <br>
   <h1>現在<div id="currentNum">0</div>/<div id="playerNum"><%- session.playerNum %></div>人
@@ -27,7 +27,7 @@
     roomID:<div id="roomId"><font color="yellow"><%- session.roomId %></font></div>
   </h1>
   <script type="text/javascript" src="/public/javascript/participantsWaitRoom.js"></script>
-  <script type="text/javascript" src="public/javascript/bgm.js"></script>
+  <script type="text/javascript" src="public/javascript/bgmButton.js"></script>
 </body>
 
 </html>

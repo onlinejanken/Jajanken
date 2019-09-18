@@ -6,12 +6,12 @@
         オンラインじゃんけん！
     </title>
     <link rel="stylesheet" type="text/css" href="/public/css/room.css">
-    <link rel="stylesheet" type="text/css" href="public/css/bgm.css" >
+    <link rel="stylesheet" type="text/css" href="public/css/bgmButton.css" >
     <script type="text/javascript" src="/socket.io/socket.io.js"></script>
 </head>
 
 <body id="body">
-    <input type="button" value="♪" onclick="newwindow()" class="bgm">
+    <input type="button" value="♪" onclick="newwindow()" class="bgmButton">
     Username<font Color=red><div id="userName"><%- session.username %></div></font>
     roomID<font Color=red><div id="roomId"><%- session.roomId %></div></font>
     <h2>じゃんけん</h2><br>
@@ -24,7 +24,7 @@
     <img id="scissors" class="scissors" src="/public/image/scissors.png" onclick="scissors()">
     </div>
     <script type="text/javascript" src="/public/javascript/room.js"></script>
-    <script type="text/javascript" src="public/javascript/bgm.js"></script>
+    <script type="text/javascript" src="public/javascript/bgmButton.js"></script>
 </body>
 
 </html>
