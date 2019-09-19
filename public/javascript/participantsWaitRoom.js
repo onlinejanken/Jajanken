@@ -3,6 +3,12 @@ const startButton = document.getElementById('startButton');
 const roomId = document.getElementById('roomId').innerText;
 const playerNum = document.getElementById('playerNum').innerText;
 
+window.onload = function () {
+    let se = new Audio();
+    se.src = '/public/se/button02b.mp3';
+    se.play();
+}
+
 // 入室処理
 socket.emit('enter', roomId);
 

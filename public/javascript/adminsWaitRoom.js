@@ -4,6 +4,12 @@ const roomId = document.getElementById('roomId').innerText.replace(/\s+/g, ''); 
 const playerNum = document.getElementById('playerNum').innerText;
 const roomMaster = document.getElementById('roomMaster').innerText;
 
+window.onload = function() {
+    let se = new Audio();
+    se.src = '/public/se/button02b.mp3';
+    se.play();
+}
+
 // 入室処理
 socket.emit('createRoom', {
     roomId: roomId,

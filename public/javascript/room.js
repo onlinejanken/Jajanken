@@ -10,7 +10,11 @@ let time;
 
 player.name = userName;
 window.onload = countDown;
-
+window.onload = function () {
+    let se = new Audio();
+    se.src = '/public/se/button02b.mp3';
+    se.play();
+}
 background.style.zIndex = '800';
 background.style.position = 'absolute';
 background.style.top = '0px';
@@ -70,6 +74,20 @@ function scissors() {
     document.getElementById('timer').textContent = '他の人の入力を待っています';
     clearInterval(time);
 }
+//マウスを載せたときに音を出す
+let se = new Audio();
+se.src = '/public/se/button02b.mp3';
+rockButton.addEventListener('mouseover', () => {
+    se.play();
+}, false);
+
+paperButton.addEventListener('mouseover', () => {
+    se.play();
+}, false);
+
+scissorsButton.addEventListener('mouseover', () => {
+    se.play();
+}, false);
 
 // ゲームの開始処理
 socket.emit('gameStart', roomId);
