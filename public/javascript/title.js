@@ -7,30 +7,35 @@ let username;
 b1.style.visibility = "hidden";
 b2.style.visibility = "hidden";
 
-document.body.addEventListener('click',Click);
-
+document.body.addEventListener('click', Click);
+window.onload = function () {
+    let se = new Audio();
+    se.src = '/public/se/button02b.mp3';
+    se.play();
+}
 //bodyクリック時の動作関数
-function Click(){
+function Click() {
     username = window.prompt("ユーザめいをにゅうりょくしてください");
-    if(username === null) return;
-    if(username === "") return;
+    if (username === null) return;
+    if (username === "") return;
 
-    document.body.removeEventListener('click',Click);
+    document.body.removeEventListener('click', Click);
 
     popup();
 }
 //ポップアップさせ、ボタンを押させる関数
-function popup(){
+function popup() {
     Layer.style.display = "block";
     b1.style.visibility = "visible";
     b2.style.visibility = "visible";
 }
+
 //部屋を作るボタンの処理
-function makeClick(){
+function makeClick() {
     postForm(username, 'admins');
 }
 //部屋に入るボタンの処理
-function joinClick(){
+function joinClick() {
     postForm(username, 'participants');
 }
 //ページ遷移関数

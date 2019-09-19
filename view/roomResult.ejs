@@ -5,14 +5,14 @@
   <meta charset="UTF-8">
   <title>じゃんけん結果</title>
   <link rel="stylesheet" type="text/css" href="/public/css/roomResults.css">
-  <link rel="stylesheet" type="text/css" href="/public/css/bgmButton.css" >
+  <link rel="stylesheet" type="text/css" href="/public/css/bgmButton.css">
   <script type="text/javascript" src="/public/javascript/roomResults.js"></script>
   <script type="text/javascript" src="/public/javascript/bgmButton.js"></script>
   <meta content="html,css,javascript" />
 </head>
 
 <body>
-  <input type="button" value="♪" onclick="newWindow()" class="bgmButton">
+  <input type="button" value="♪" onclick="newWindow();sound()" class="bgmButton">
   <h1>じゃんけん結果</h1>
 
   <!-- <%- session.resultData.judge %> -->

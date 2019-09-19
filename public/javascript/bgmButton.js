@@ -9,3 +9,9 @@ function newWindow() {
         windowObject = null;
     }
 }
+//クリック音
+function sound(){
+    let se = new Audio();
+    se.src = '/public/se/button02b.mp3';
+    se.play();
+}

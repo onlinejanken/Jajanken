@@ -1,4 +1,10 @@
+window.onload = function () {
+    let se = new Audio();
+    se.src = '/public/se/button02b.mp3';
+    se.play();
+}
 function waitJump(playerNum) {
+
     let form = document.createElement('form');
     let request = document.createElement('input');
 

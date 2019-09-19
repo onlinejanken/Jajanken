@@ -1,6 +1,12 @@
 const ok = document.getElementById('ok');
 ok.addEventListener('click', returnClick);
 
+window.onload = function () {
+    let se = new Audio();
+    se.src = '/public/se/button02b.mp3';
+    se.play();
+}
+
 //okボタンを押すとtitleに戻る
 function returnClick() {
     getForm(null, '');
@@ -9,9 +15,9 @@ function returnClick() {
 const send = document.getElementById('send');
 send.addEventListener('click', sendForm);
 //inputタグ内でenterを押す。
-function receive(code){
-	//エンターキー押下なら
-	if(13 === code){
+function receive(code) {
+    //エンターキー押下なら
+    if (13 === code) {
         sendForm();
     }
 }
