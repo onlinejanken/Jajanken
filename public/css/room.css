@@ -1,4 +1,6 @@
 h2 {
+    margin-top: 0%;
+    margin-bottom: 0%;
     color: red;
     font-family:serif;
     font-size: 50px;
@@ -23,8 +25,9 @@ body {
 }
 img{
     display: inline-block;
-    width:32%;
-    height:80%;
+    margin-right:5%;
+    width:24%;
+    height:60%;
 }
 .images{
     text-align: center;
