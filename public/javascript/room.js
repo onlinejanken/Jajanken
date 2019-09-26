@@ -8,13 +8,15 @@ let player = {};
 let background = document.createElement('div');
 let time;
 
-player.name = userName;
-window.onload = countDown;
+
 window.onload = function () {
     let se = new Audio();
     se.src = '/public/se/button02b.mp3';
     se.play();
-}
+};
+
+player.name = userName;
+window.onload = countDown;
 background.style.zIndex = '800';
 background.style.position = 'absolute';
 background.style.top = '0px';
@@ -74,9 +76,11 @@ function scissors() {
     document.getElementById('timer').textContent = '他の人の入力を待っています';
     clearInterval(time);
 }
+
 //マウスを載せたときに音を出す
 let se = new Audio();
 se.src = '/public/se/button02b.mp3';
+
 rockButton.addEventListener('mouseover', () => {
     se.play();
 }, false);

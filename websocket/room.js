@@ -64,4 +64,4 @@ module.exports = (app, http, socket) => {
             }
         });
     });
-}
+};

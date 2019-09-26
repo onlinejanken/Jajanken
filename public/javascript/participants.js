@@ -34,7 +34,6 @@ function sendForm() {
 
 //ページ遷移関数(post) 
 function postForm(value, nextScreen) {
-
     let form = document.createElement('form');
     let request = document.createElement('block');
 
@@ -52,7 +51,6 @@ function postForm(value, nextScreen) {
 
 //ページ遷移関数(get)
 function getForm(value, nextScreen) {
-
     let form = document.createElement('form');
     let request = document.createElement('block');
 

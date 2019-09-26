@@ -3,8 +3,8 @@ window.onload = function () {
     se.src = '/public/se/button02b.mp3';
     se.play();
 }
-function waitJump(playerNum) {
 
+function waitJump(playerNum) {
     let form = document.createElement('form');
     let request = document.createElement('input');
 

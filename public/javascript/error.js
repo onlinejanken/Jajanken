@@ -1,12 +1,12 @@
-function returnTop(){
+function returnTop() {
     postForm();
 }
-function postForm() {
 
+function postForm() {
     let form = document.createElement('form');
 
     form.method = 'GET';
-    form.action = '/' ;
+    form.action = '/';
 
     document.body.appendChild(form);
     form.submit();
