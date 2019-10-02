@@ -1,6 +1,6 @@
 const socket = io();
 const startButton = document.getElementById('startButton');
-const roomId = document.getElementById('roomId').innerText;
+const roomId = document.getElementById('roomId').innerText.replace(/\s+/g, '');
 const playerNum = document.getElementById('playerNum').innerText;
 
 window.onload = function () {

@@ -1,39 +1,39 @@
 body {
-background-color: #2bc4ff;
+    background-color: #2bc4ff;
 }
 
 h1 {
-text-align: center;
+    text-align: center;
 }
 
 h2 {
-text-align: center;
+    text-align: center;
 }
 
 div{
-margin: auto;
-padding: auto;
-list-style-type: none;
+    margin: auto;
+    padding: auto;
+    list-style-type: none;
 
-display: inline;
-padding: auto;
-margin: auto;
+    display: inline;
+    padding: auto;
+    margin: auto;
 }
 
 #exit button{
-position: relative;
-top: 20px;
-display: block;
-color:#fff;
-background-color:#59b1eb;
-border-radius:25px;
-padding: 3px 10px;
-text-decoration: none;
-width: 400px;
-margin: 5px auto;
-margin-top: 50px;
-text-align: center;
-font-size: 40px;
+    position: relative;
+    top: 20px;
+    display: block;
+    color:#fff;
+    background-color:#59b1eb;
+    border-radius:25px;
+    padding: 3px 10px;
+    text-decoration: none;
+    width: 400px;
+    margin: 5px auto;
+    margin-top: 50px;
+    text-align: center;
+    font-size: 40px;
 }
 #exit button:hover{
     border-left: 1px solid #474655; /*飛び出してる感じ*/
