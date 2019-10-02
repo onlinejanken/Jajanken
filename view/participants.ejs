@@ -12,7 +12,7 @@
 <body>
     <input type="button" value="♪" onclick="newWindow();sound()" class="bgmButton">
     <h1 class="username">ようこそ <font color="red"><%- session.username %></font> さん</h1>
-    <h1 class="text">部屋番号を入力してください。</h1>
+    <h1 class="text">部屋番号を入力してください</h1>
     <div class="wrap">
         <input type="text" onkeypress="receive(event.keyCode);" id="roomId" autofocus>
         <h2 id="error">
@@ -21,7 +21,7 @@
             <% } %>
         </h2>
         <button type="button" id="send" class="button">送信</button><br>
-        <h1 class="text">入室をやめる。</h1>
+        <h1 class="text">タイトルに戻る</h1>
         <button type="button" id="ok" class="button">OK</button>
     </div>
     <script type="text/javascript" src="/public/javascript/participants.js"></script>
