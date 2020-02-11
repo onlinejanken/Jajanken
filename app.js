@@ -4,6 +4,7 @@ const bodyParser = require('body-parser');
 const socket = require('socket.io');
 const session = require('express-session');
 const cookieParser = require('cookie-parser');
+const PORT = process.env.PORT || 3000;
 
 const db = require('./db/room.js');
 db.init();
@@ -43,6 +44,7 @@ app.use((err, req, res, next) => {
     res.render('error', { error: err });
 });
 
-require('./websocket/room.js')(app, app.listen(3000), socket);
+require('./websocket/room.js')(app, app.listen(PORT), socket);
 
 console.log("Start Server" + new Date);
+console.log("PORT " + PORT);
